@@ -1,0 +1,20 @@
+Categories
+    Items
+        Materials
+            Elements
+            Compounds
+                Polymers
+            Fibers
+            Parts
+        Tools
+        Weapons
+        Utility
+            Mobility
+            Communication
+    Blocks
+        Metal
+        Plastic
+        Machines
+            Petrochemical
+            Photolithography
+            Economic
