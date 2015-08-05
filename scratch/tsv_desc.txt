@@ -1,0 +1,200 @@
+Descriptions for polycraft's .tsv files:
+
+config: {
+    alloy: {
+        fields: {
+            Version: Polycraft version number when item was added
+            Alloy: Name of Alloy
+            Red: # Unsure, mostly blank
+            Green: # Unsure, mostly blank
+            Blue: # Unsure, mostly blank
+            hex code: # Unsure, mostly blank
+            Uses: Description of alloy's uses, mostly blank
+        }
+        Description: This appears to be a "concept" file, as there are no game 
+            IDs. As most entries are blank, this file is not very useful.
+        Notes: Uses field is filled in for steel. This will likely be manually
+            included in the Steel page.
+    }
+    armor: {
+        fields: {
+            Version: Polycraft version number when armor type was added
+            Headgear ID: Polycraft ID of head armor item
+            Chest ID: Polycraft ID of chest armor item
+            Leggings ID: Polycraft ID of leg armor item
+            Feet ID: Polycraft ID of foot armor item
+            Crafting Item: Long name of material to craft armor
+            Armor Material Name: Material name for item name synthesis
+            Headgear: Name of head armor item
+            Chest: Name of chest armor item
+            Leggings: Name of leg armor item
+            Feet: Name of foot armor item
+            Durability (Int): Durability of the armor pieces # Multiplier of base value?
+            Enchantability (Int): Modifier for enchanting
+            Reduction Headgear (Int): Damage reduction applied by head armor
+            Reduction Chest (Int): Damage reduction applied by chest armor
+            Reduction Leggings (Int): Damage Reduction applied by leg armor
+            Reduction Feet (Int): Damage Reduction applied by foot armor
+            AquaAffinity Level: Level of Aqua Affinity enchant applied to armor.
+        }
+        Description: This is an item-dense file that needs to be expanded before
+            wiki building. After expansion, each record corresponds to a single
+            item.
+        Notes: 
+    }
+    catalyst: {
+        fields: {
+            Version: Polycraft version when the catalyst was added
+            Game ID: The Polycraft ID of the catalyst
+            Catalyst: The name of the catalyst
+            Source Type: The type of item the catalyst comes from
+            Source Name: The name of the item  the catalyst comes from
+        }
+        Description: List of all the catalysts in Polycraft and their base 
+            material.
+        Notes: Very straightforward file to turn into pages
+    }
+    compound: {
+        fields: {
+            Version: Polycraft version when the compound was added
+            Compound: Scientific chemical name of the compound.
+            Formula: Chemical formula of the compound
+            State of Matter: State of compound at STP
+            First Release: Current version is release version for the compound?
+            Nicknames: Alternate common names
+            Notes: Misc chemical information
+            Uses: Uses of the compound
+            [Titleless field]: lists class of compound?
+        }
+        Description: Lists all compounds that are in the mod.
+        Notes: Useful information, base .tsv for all the compound entries
+    }
+    compoundvessel: {
+        fields: {
+            Version: Polycraft version when the vessels were added
+            Game ID 1: Polycraft ID of the scale 1 vessel
+            Game ID 2: Polycraft ID of the scale 2 vessel
+            Game ID 3: Polycraft ID of the scale 3 vessel
+            Game ID 4: Polycraft ID of the scale 4 vessel
+            Compound Small: Chemical name appended to the scale 1 vessel of appropriate state
+            Compound Medium: Chemical name appended to the scale 2 vessel of appropriate state
+            Compound Large: Chemical name appended to the scale 3 vessel of appropriate state
+            Compound Industrial: Chemical name appended to the scale 4 vessel of appropriate state
+            Compound: Chemical name
+            State: Compound state at STP
+            Vessel 1: Name of scale 1 vessel for compound
+            Vessel 2: Name of scale 2 vessel for compound
+            Vessel 3: Name of scale 3 vessel for compound
+            Vessel 4: Name of scale 4 vessel for compound
+        }
+        Description: Contains ID and name for all compound vessels in the mod
+        Notes: Highly redundant, could be merged with compound.tsv on the 
+            Compound field to have a single .tsv with one compound per line and 
+            all the relevant IDs. For wiki purposes only need ID fields, as 
+            names can be synthesized from %compound%Compound, 
+            %compound%State, and %enum
+    }
+    compressedblock: {
+        fields: {
+            Version: Polycraft version when the block was added
+            Game ID: Polycraft ID of block
+            Compressed Block: Name of the block
+            Source Type: Type of item block is made from
+            Source name: Name of source item
+        }
+        Descritpion: Contains all of the blocks made from filling a crafting 
+            table with 9 source items/blocks
+        Notes: Straightforward 1-1 record to page
+    }
+    customobject: {
+        fields: {
+            Version: Polycraft version when item was introduced
+            Game ID: Polycraft ID of item
+            Custom object: name of item
+            Type: rudimentary categorization
+            Level: Required polycrafter level to craft
+            First Release: Current version is first to include item?
+            Notes: Empty field
+            Max Stack Size: largest number of items that can be stacked
+            Flashlight Range: Range of AOE abilities, blank if none
+            Parameter names: List of names for following parameter values
+            P1: Custom parameter 1
+            P2: Custom parameter 2
+            P3: Custom parameter 3
+            P4: Custom parameter 4
+            P5: Custom parameter 5
+            P6: Custom parameter 6
+            P7: Custom parameter 7
+            P8: Custom parameter 8
+            P9: Custom parameter 9
+        }
+        Description: Grab bag of items that have few variants and lots of custom
+            actions/parameters
+        Notes: Likely most difficult to parse, as the only unifying factor is 
+            that they don't fit anywhere else. Good reason to not consolidate 
+            tools of similar type into a single page.
+    }
+    electronics: {
+        fields: {
+            Version: Polycraft version that introduced item
+            Game ID: Polycraft ID of item
+            Wafer: Name of item
+            Mold type: mold required to create item
+            Electronics: Electronic item the uses wafer
+            Layers: Number of layers required to assemble wafer in contact printer
+            Chips per Wafer: number of chips that are produced from one wafer
+        }
+        Description: Index of some of the items in the photolithographic 
+            processing.
+        Notes: Not sure if the Game ID field refers to the %Wafer item or 
+            %Eletronic item
+    }
+    element: {
+        fields: {
+            Version: Polycraft version that introduced the element
+            Element: Name of element
+            Symbol: elemental symbol
+            State: element state at STP
+            Atomic_Number: atomic number of element
+            Group: horizontal index in the periodic table
+            Period: vertical index in the periodic table
+            Atomic_Weight: atomic weight of the element
+            Density: density of element in common pure state, g/cm^3
+            Melt: melting point of element in K
+            Boil: Boiling point of element in K
+            Heat: Unsure
+            Electronegativity: Electronegativity of element
+            Abundance: Element abundancy on Earth's surface, assuming ppm
+        }
+        Description: statistics on elements from 1-199
+        Notes: Least conformant in field names, lots of useful information
+    }
+    elementvessel: {
+        fields: {
+            Version: Polycraft version that introduced vessels
+            Game ID 1: Polycraft ID of the scale 1 vessel
+            Game ID 2: Polycraft ID of the scale 2 vessel
+            Game ID 3: Polycraft ID of the scale 3 vessel
+            Game ID 4: Polycraft ID of the scale 4 vessel
+            Element Small: Element name appended to the scale 1 vessel of appropriate state
+            Element Medium: Element name appended to the scale 2 vessel of appropriate state
+            Element Large: Element name appended to the scale 3 vessel of appropriate state
+            Element Industrial: Element name appended to the scale 4 vessel of appropriate state
+            Element: Element name
+            Symbol: Elemental symbol
+            State: Element state at STP
+            Vessel 1: Name of scale 1 vessel for Element
+            Vessel 2: Name of scale 2 vessel for Element
+            Vessel 3: Name of scale 3 vessel for Element
+            Vessel 4: Name of scale 4 vessel for Element
+        }
+        Description: Includes all sizes of element vessels and their IDs
+        Notes: form copied from %compoundvessel, see notes there
+    }
+    enums: {
+        fields: Inconsistent
+        Description: Multi-section tsv that has a bunch of enumerated types
+        Notes: Super useful, but will need a custom muncher and internal 
+            representation
+    }
+    
