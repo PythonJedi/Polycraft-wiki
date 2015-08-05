@@ -1,0 +1,3 @@
+[submodule "polycraft"]
+	path = polycraft
+	url = https://github.com/WalterVoit/polycraft.git

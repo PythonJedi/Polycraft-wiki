@@ -1,0 +1,8 @@
+tsv transformations:
+consolidate element and elementvessel
+consolidate compound and compoundvessel
+expand tool.tsv
+consolidate polymer and polymerpellets
+consolidate polymerblock, polymerslab, polymerstair, and polymerwall
+
+
