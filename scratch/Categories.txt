@@ -1,3 +1,12 @@
 Working out category membership for wiki pages/tsv records
 
-
+Component
+Weapon
+Tool
+Utility
+Food
+Wearable
+Electronic
+Currency
+Communication
+Raw Material 
