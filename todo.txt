@@ -1,0 +1,10 @@
+Todo for immediate proof of concept.
+I need to be able to produce a large number of wiki pages, but I think the customizability is what will sell the point.
+To that end, customobject.tsv is a good candidate as it has a large number of variant items that will have differing fragments stitched together from forms.
+
+tsv transformations:
+consolidate element and elementvessel
+consolidate compound and compoundvessel
+expand tool.tsv
+consolidate polymer and polymerpellets
+consolidate polymerblock, polymerslab, polymerstair, and polymerwall 

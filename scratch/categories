@@ -1,0 +1,12 @@
+Working out category membership for wiki pages/tsv records
+
+Component = is part of a crafting recipie
+Weapon = Primary purpose is to damage entities
+Tool = used to more efficiently interact with blocks
+Utility = Item used to make playing the game easier
+Food = Edible item
+Wearable = Item can be placed in armor slot
+Electronic = Item part of Electronic tech tree
+Currency = Item has monetary value
+Communication = Item is used to assist communication
+Raw Material = Item has no crafting recipie, must be harvested from world.
