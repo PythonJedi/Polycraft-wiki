@@ -9,4 +9,4 @@ Wearable = Item can be placed in armor slot
 Electronic = Item part of Electronic tech tree
 Currency = Item has monetary value
 Communication = Item is used to assist communication
-Raw Material = Item has no crafting recipie, must be harvested from world.
+Raw Material = Item has no crafting recipe, must be harvested from world.
