@@ -1,0 +1,4 @@
+==Crafting==
+
+//Name// is usable as a crafting component in the following recipies:
+>>recipe_list:recipes:I\d+=//Name//<<
