@@ -1,0 +1,194 @@
+An ITEM is anything that can be stored in an inventory slot
+Each ITEM has a unique ID
+Each ITEM has a VERSION it was introduced in
+A BLOCK is an ITEM that can be placed in the world
+
+A STATE is one of SOLID, LIQUID, GAS
+A VESSEL NAME depends on the STATE of its contents and its SCALE
+A SOLID VESSEL NAME is one of BAG, SACK, BARREL
+A LIQUID VESSEL NAME is one of VIAL, BEAKER, DRUM
+A GAS VESSEL NAME is one of FLASK, CARTRIDGE, CANISTER
+
+An ITEM may be an ARMOR PIECE
+An ARMOR PIECE may be part of an ARMOR SET
+Each ARMOR SET has a CRAFTING ITEM
+Each ARMOR SET has a unique MATERIAL NAME
+Each ARMOR SET has a DURABILITY
+Each ARMOR SET has an ENCHANTABILITY
+Each ARMOR SET has an AQUA AFINNITY LEVEL (a property that makes working in water easier)
+Each ARMOR SET has a PART NAME for each ARMOR PIECE
+Each ARMOR PIECE has a REDUCTION (how much protection the piece provides)
+
+An ITEM may be a CATALYST
+Each CATALYST has a SOURCE it is created from
+Each SOURCE is either an ELEMENT or a COMPOUND
+
+An ITEM may be a VESSEL
+Each VESSEL has a certain SCALE
+A VESSEL may contain either an ELEMENT or a COMPOUND
+Each COMPOUND has a certain STATE
+Each COMPOUND has a FORMULA
+Some COMPOUNDS have NICKNAMES
+Each ELEMENT has a certain STATE
+Each ELEMENT has a SYMBOL
+Each ELEMENT has a unique ATOMIC NUMBER
+Each ELEMENT has a GROUP
+Each ELEMET has a PERIOD
+Each ELEMENT has an ATOMIC WEIGHT
+Most ELEMENTS have a known DENSITY
+Most ELEMENTS have a known MELTING POINT
+Most ELEMENTS have a known BOILING POINT
+Most ELEMENTS have a known SPECIFIC HEAT
+Most ELEMENTS have a known ELECTRONEGATIVITY
+Each ELEMENT has a NATRUAL ABUNDANCE (man-made elements are 0)
+
+An ITEM may be a FUEL
+Each FUEL has a SOURCE
+Each SOURCE has a SOURCE TYPE
+Each FUEL has an INTENISTY
+Each FUEL has a DURATION
+
+A BLOCK may be a COMPRESSED BLOCK
+Each COMPRESSED BLOCK has a SOURCE
+
+An ITEM may be a CUSTOM OBJECT
+Each CUSTOM OBJECT has a TYPE
+Some CUSTOM OBJECTS have a LEVEL requirement
+Each CUSTOM OBJECT has a MAX STACK SIZE
+Some CUSOM OBJECTS have an EFFECT RANGE (eventually to be merged into PARAMETERS
+Some CUSTOM OBJECTS have PARAMETER NAMES
+Each PARAMETER NAME has a PARAMETER VALUE
+
+An ITEM may be an ELECTRONIC DEVICE
+Each ELECTRONIC DEVICE has a FINISHED WAFER used to create it
+Each FINISHED WAFER has a LAYER COUNT
+Each FINISHED WAFER has a certain CHIP COUNT
+Each FINISHED WAFER is created by a WAFER
+Each WAFER has a MOLD TYPE
+Each WAFER has a LAYER
+Each WAFER has a LAYER NUMBER
+Each WAFER has a NAME
+Each WAFER has a MASK 
+Each WAFR has a SOURCE
+Each WAFER has a RESIST
+Each WAFER has a CLEAN ROOM flag
+
+An ITEM may be a GRIPPED TOOL
+Each GRIPPED TOOL has a MINECRAFT ITEM as a base
+Each GRIPPED TOOL has a GRIP that is added to the MINECRAFT ITEM
+Each GRIP is a MOLDED ITEM
+Each GRIP has a DURABILITY BUFF
+Each GRIP has a SPEED BUFF
+Each GRIP has a LEVEL requirement
+
+An ITEM may be an INGOT
+Each INGOT has a SOURCE 
+Each SOURCE has a TYPE {Element, Alloy}
+Each INGOT has a MOLD DAMAGE (The amount of durability damage a mold takes per use)
+
+A BLOCK may be an INVENTORY
+Each INVENTORY has a BLOCK ID
+Each INVENTORY has a TILE ENTITIY ID
+Each INVENTORY has a GUI ID (to index which GUI texture to use)
+Each INVENTORY has a RENDER ID
+Each INVENTORY has a RENDER 3D OBJECT flag
+Each INVENTORY has a DEPTH
+Each INVENTORY has a WIDTH
+Each INVENTORY has a HEIGHT
+Some INVENTORIES have a FUEL PORT relative location
+Some INVENTORIES have a list of INPUT PORT relative locations
+Some INVENTORIES have an OUTPUT PORT relative location
+Most INVENTORIES have a set of ICONS (block side textures)
+Most INVENTORIES have a default ICON and ICONS for some SIDES
+Some INVENTORIES have PARAMETER NAMES
+Each PARAMETER NAME has a PARAMETER VALUE
+
+An ITEM may be a MASK
+Each MASK has an ELECTRONIC DEVICE it is associated with
+Each MASK has a LAYER it is associated with
+An ITEM may be a PATTERN
+Each PATTERN has a POLYMER OBJECT it creates
+
+An ITEM may be a MOLDED ITEM
+Each MOLDED ITEM has a PATTERN it is created with
+Each MOLDED ITEM has a SOURCE it is created from
+
+An ITEM may be a NUGGET
+Each NUGGET has a SOURCE
+Each NUGGET has a MASK DAMAGE
+
+A BLOCK may be an ORE
+Each ORE has a NAME
+Each ORE has a SOURCE
+Each SOURCE has a SOURCE TYPE
+Each ORE has a HARDNESS
+Each ORE has a RESISTANCE
+Each ORE has an EXP MIN (minimum amount of experience dropped when broken)
+Each ORE has an EXP MAX (maximum amount of experience dropped when broken)
+Each ORE has a VEINS PER CHUNK
+Each ORE has a BLOCKS PER VEIN
+Each ORE has a DEPTH MIN
+Each ORE has a DEPTH MAX
+
+An ITEM may be a POGO STICK
+Each POGO STICK has a NAME
+Each POGO STICK has a BASE MATERIAL
+Each POGO STICK has a MAX BOUNCES
+Each POGO STICK has a STABLE BOUNCE HEIGHT
+Each POGO STICK has a MOVEMENT BUFF
+Each POGO STICK has a RESTRICT TO GROUND flag (only false for the “magic” pogo stick)
+Some POGO STICKS have a GRIPPED FROM (The base POGO STICK that has GRIPS applied to it)
+Each POGO STICK with a GRIPPED FROM has a GRIP used to make it
+Each POGO STICK has a LEVEL requirement
+
+An ITEM may be a POLYMER ITEM
+Each POLYMER ITEM has a POLYMER it is made from
+Each POLYMER ITEM has a NAME that includes its POLYMER’s SHORT NAME
+Each POLYMER has a NAME
+Each POLYMER has a SHORT NAME
+Each POLYMER has a THERMOPLASTIC flag
+Each POLYMER has a STATE
+Some POLYMERS have a LEVEL requirement
+Some POLYMERS have a RECYCLING NUMBER
+Each POLYMER has a DEGRADEABLE flag
+Some POLYMERS have a SOLVENT
+Each POLYMER has a POLYMER CLASS 1
+Some POLYMERS have a POLYMER CLASS 2
+Some POLYMERS have a POLYMER CLASS 3
+
+A POLYMER ITEM may be a POLYMER BLOCK
+A POLYMER BLOCK is a BLOCK
+Each POLYMER BLOCK has a BOUNCE HEIGHT
+Each POLYMER BLOCK has a BLOCK ID
+A POLYMER BLOCK may be a FULL POLYMER BLOCK
+A POLYMER BLOCK may be a POLYMER STAIR
+A POLYMER BLOCK may be a POLYMER WALL
+A POLYMER BLOCK may be a POLYMER SLAB
+Each POLYMER SLAB has a DOUBLE SLAB ITEM ID
+Each POLYMER SLAB has a DOUBLE SLAB BLOCK ID
+
+A POLYMER ITEM may be a POLYMER BRICK
+Each POLYMER BRICK has a TILE ENTITY ID
+Each POYMER BRICK has a NAME
+Each POLYMER BRICK has a SOURCE
+Each POLYMER BRICK has a WIDTH
+Each POLYMER BRICK has a LENGTH
+Each POLYMER BRICK has a SUB BLOCK
+Each POLYMER BRICK has a MOLD it is made with
+Each POLYMER BRICK has a MATERIAL AMOUNT
+Each POLYMER BRICK has a CRAFTING DURATION
+
+A POLYMER ITEM may be a POLYMER FIBER
+
+A POLYMER ITEM may be POLYMER PELLETS
+All POLYMER PELLETS have an ID for each SCALE
+
+An ITEM may be a TOOL
+Each TOOL has a SHAFT MATERIAL
+Each TOOL has a HEAD MATERIAL
+Each TOOL has a MATERIAL NAME
+Each TOOL has a HARVEST LEVEL
+Each TOOL has a MAX USES
+Each TOOL has an EFFICIENCY
+Each TOOL has a DAMAGE VS ENTITIES
+Each TOOL has an ENCHANTABILILTY
