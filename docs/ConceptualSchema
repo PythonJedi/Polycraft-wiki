@@ -192,3 +192,22 @@ Each TOOL has a MAX USES
 Each TOOL has an EFFICIENCY
 Each TOOL has a DAMAGE VS ENTITIES
 Each TOOL has an ENCHANTABILILTY
+
+(Begin recipie descriptions. These are more succinct but are much more complicated in practice)
+
+Each RECIPIE has a MACHINE it is created with
+Each MACHINE has a certain number of INPUT SLOTS
+Each MACHINE has a certain number of OUTPUT SLOTS
+Some MACHINES have a FUEL SLOT
+
+Each RECIPIE has at least one INGREDIENT
+Each RECIPIE has at least one PRODUCT
+The maximal number of INGREDIENTS and OUTPUTS is a property of the MACHINE
+Some RECIPIES are stoichiometrically equivalent, that is, the INGREDIENTS and OUTPUTS are the same ITEMS and their ratios are the same.
+Some RECIPIES are conceptually equivalent, that is, they use different SCALES of VESSELS but have the same ratio of the other SCALES
+
+A PATTERN or MASK is created in a PATTERNING MACHINE
+A PATTERN can be made with a variety of MATERIALS
+Any single PATTERN must be made with the same MATERIAL
+The arrangement of MATERIALS designate the PATTERN to be created.
+The properties of the MATERIAL determine the durability of the PATTERN
