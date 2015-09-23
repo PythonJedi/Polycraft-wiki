@@ -2,6 +2,7 @@ An ITEM is anything that can be stored in an inventory slot
 Each ITEM has a unique ID
 Each ITEM has a VERSION it was introduced in
 A BLOCK is an ITEM that can be placed in the world
+Each BLOCK has a BLOCK ID
 
 A STATE is one of SOLID, LIQUID, GAS
 A VESSEL NAME depends on the STATE of its contents and its SCALE
