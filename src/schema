@@ -1,0 +1,27 @@
+CREATE DATABASE polycraft_config;
+CREATE TABLE item (
+  Name varchar(255) NOT NULL PIRMARY KEY, 
+  ID varchar(3) NOT NULL UNIQUE,
+  Version varchar(8),
+);
+CREATE TABLE block (
+  BlockID varchar(3) NOT NULL PRIMARY KEY,
+  Name varchar(255) FOREIGN KEY REFERENCES item(Name)
+);
+
+/*
+Enumerations follow. These are hardcoded in this file because the tsv table containing them is not parseable by standard means.
+*/
+CREATE TABLE vessels (
+  State varchar(5) NOT NULL PRIMARY KEY CHECK(State in ('solid', 'liquid', 'gas')),
+  Small varchar(20) NOT NULL,
+  Medium varchar(20) NOT NULL,
+  Large varchar(20) NOT NULL
+)
+# TODO: Add enum values here
+/*end enumerations*/
+
+CREATE TABLE catalyst (
+  Source varchar(255) NOT NULL PRIMARY KEY,
+  SourceType varchar(8) NOT NULL CHECK(SourceType in ('element', 'compound'))
+)
