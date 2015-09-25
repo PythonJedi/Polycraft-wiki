@@ -1,27 +1,59 @@
 CREATE DATABASE polycraft_config;
 CREATE TABLE item (
-  Name varchar(255) NOT NULL PIRMARY KEY, 
-  ID varchar(3) NOT NULL UNIQUE,
-  Version varchar(8),
+  Name text NOT NULL PIRMARY KEY,
+  ID text NOT NULL UNIQUE,
+  Version text,
 );
 CREATE TABLE block (
-  BlockID varchar(3) NOT NULL PRIMARY KEY,
-  Name varchar(255) FOREIGN KEY REFERENCES item(Name)
+  BlockID text NOT NULL PRIMARY KEY,
+  Name text FOREIGN KEY REFERENCES item(Name)
 );
 
 /*
 Enumerations follow. These are hardcoded in this file because the tsv table containing them is not parseable by standard means.
 */
 CREATE TABLE vessels (
-  State varchar(5) NOT NULL PRIMARY KEY CHECK(State in ('solid', 'liquid', 'gas')),
-  Small varchar(20) NOT NULL,
-  Medium varchar(20) NOT NULL,
-  Large varchar(20) NOT NULL
-)
-# TODO: Add enum values here
+  State text NOT NULL PRIMARY KEY CHECK(State in ('solid', 'liquid', 'gas')),
+  Small text NOT NULL,
+  Medium text NOT NULL,
+  Large text NOT NULL
+);
+INSERT INTO vessels (State, Small, Medium, Large) VALUES ('solid', 'Bag', 'Sack', 'Barrel');
+INSERT INTO vessels (State, Small, Medium, Large) VALUES ('liquid', 'Vial', 'Beaker', 'Drum');
+INSERT INTO vessels (State, Small, Medium, Large) VALUES ('gas', 'Flask', 'Cartridge', 'Canister');
 /*end enumerations*/
 
 CREATE TABLE catalyst (
-  Source varchar(255) NOT NULL PRIMARY KEY,
-  SourceType varchar(8) NOT NULL CHECK(SourceType in ('element', 'compound'))
-)
+  Source text NOT NULL PRIMARY KEY
+);
+
+CREATE TABLE element (
+  Name text NOT NULL PRIMARY KEY,
+  Symbol text NOT NULL UNIQUE,
+  State text NOT NULL CHECK(State IN ('solid', 'liquid', 'gas'),
+  AtomicNumber text NOT NULL UNIQUE,
+  Group text NOT NULL,
+  Period text NOT NULL,
+  Density text,
+  MeltingPoint text,
+  BoilingPoint text,
+  SpecificHeat text,
+  ElectroNegativity text,
+  Abundance text NOT NULL,
+);
+
+CREATE TABLE compound (
+  Name text NOT NULL PRIMARY KEY,
+  Formula text,
+  Nicknames text,
+);
+
+CREATE TABLE fuel (
+  Source text NOT NULL PRIMARY KEY,
+  Intensity text NOT NULL,
+  Duration text NOT NULL,
+);
+
+CREATE TABLE compressed_block (
+  Source text NOT NULL PRIMARY KEY
+);
