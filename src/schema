@@ -1,13 +1,4 @@
 CREATE DATABASE polycraft_config;
-CREATE TABLE item (
-  Name text NOT NULL PIRMARY KEY,
-  ID text NOT NULL UNIQUE,
-  Version text,
-);
-CREATE TABLE block (
-  BlockID text NOT NULL PRIMARY KEY,
-  Name text FOREIGN KEY REFERENCES item(Name)
-);
 
 /*
 Enumerations follow. These are hardcoded in this file because the tsv table containing them is not parseable by standard means.
@@ -23,37 +14,126 @@ INSERT INTO vessels (State, Small, Medium, Large) VALUES ('liquid', 'Vial', 'Bea
 INSERT INTO vessels (State, Small, Medium, Large) VALUES ('gas', 'Flask', 'Cartridge', 'Canister');
 /*end enumerations*/
 
-CREATE TABLE catalyst (
-  Source text NOT NULL PRIMARY KEY
+CREATE TABLE minecraft_item (
+  ID text NOT NULL PRIMARY KEY,
+  Name text NOT NULL,
+  BurnIntensity int,
+  BurnDuration int,
+  CHECK(BurnIntensity IS null = BurnDuration IS null)
+);
+
+CREATE TABLE minecraft_block (
+  ID text NOT NULL PRIMARY KEY,
+  Name text NOT NULL,
+  BurnIntensity int,
+  BurnDuration int,
+  CHECK(BurnIntensity IS null = BurnDuration IS null)
 );
 
 CREATE TABLE element (
   Name text NOT NULL PRIMARY KEY,
   Symbol text NOT NULL UNIQUE,
   State text NOT NULL CHECK(State IN ('solid', 'liquid', 'gas'),
-  AtomicNumber text NOT NULL UNIQUE,
-  Group text NOT NULL,
-  Period text NOT NULL,
-  Density text,
-  MeltingPoint text,
-  BoilingPoint text,
-  SpecificHeat text,
-  ElectroNegativity text,
-  Abundance text NOT NULL,
+  SmallVessel text,
+  MediumVessel text,
+  LargeVessel text,
+  Catalyst text,
+  Nugget text,
+  MaskDamage int,
+  Ingot text,
+  MoldDamage int,
+  Block text,
+  BurnIntensity int,
+  BurnDuration int,
+  AtomicNumber int NOT NULL UNIQUE,
+  Group int NOT NULL,
+  Period int NOT NULL,
+  Density real,
+  MeltingPoint real,
+  BoilingPoint real,
+  SpecificHeat real,
+  ElectroNegativity real,
+  Abundance real NOT NULL,
+  CHECK(BurnIntensity IS null = BurnDuration IS null)
 );
 
 CREATE TABLE compound (
   Name text NOT NULL PRIMARY KEY,
   Formula text,
+  State text CHECK(State IN ('solid', 'liquid', 'gas')),
+  SmallVessel text,
+  MediumVessel text,
+  LargeVessel text,
+  Catalyst text,
+  BurnIntensity int,
+  BurnDuration int,
   Nicknames text,
+  CHECK(BurnIntensity IS null = BurnDuration IS null)
 );
 
-CREATE TABLE fuel (
-  Source text NOT NULL PRIMARY KEY,
-  Intensity text NOT NULL,
-  Duration text NOT NULL,
+CREATE TABLE polymer (
+  Name text NOT NULL PRIMARY KEY,
+  ShortName text,
+  Thermoplastic number NOT NULL, /* SQLite has no boolean type */
+  State text NOT NULL CHECK (State IN ('solid', 'liquid', 'gas')),
+  Level int,
+  RecyclingNumber int,
+  Degradeable number NOT NULL,
+  Solvent text,
+  Class1 text NOT NULL,
+  Class2 text,
+  Class3 text,
+  Fiber text,
+  SmallVessel text,
+  MediumVessel text,
+  LargeVessel text,
+  BlockBounce int,
+  Block text,
+  Stair text,
+  Wall text,
+  SlabBounce int,
+  Slab text,
+  SlabBlock text,
+  DoubleSlab text,
+  DoubleSlabBlock text,
 );
 
-CREATE TABLE compressed_block (
-  Source text NOT NULL PRIMARY KEY
+CREATE TABLE polymer_brick (
+  TileEntity text NOT NULL,
+  Source text NOT NULL,
+  Width int NOT NULL,
+  Length int NOT NULL,
+  Height int NOT NULL DEFAULT 1,
+  SubBlock text NOT NULL,
+  Mold text NOT NULL,
+  Amount int NOT NULL,
+  Duration int NOT NULL,
+);
+
+CREATE TABLE tool (
+  Shaft text NOT NULL,
+  Head text NOT NULL,
+  Material text NOT NULL,
+  Harvest int NOT NULL,
+  Uses int NOT NULL,
+  Efficiency int NOT NULL,
+  Damage int NOT NULL,
+  Enchantability int NOT NULL,
+  Pickaxe text,
+  Axe text,
+  Shovel text,
+  Sword text,
+  Hoe text,
+  PRIMARY KEY(Shaft, Head)
+);
+
+CREATE TABLE custom_object (
+  Name text NOT NULL PRIMARY KEY,
+  ID text NOT NULL,
+  Type text NOT NULL,
+  Level int,
+  MaxStack int NOT NULL,
+  ParameterNames text,
+  Parameters text,
+  CHECK(ParameterNames IS null = Prameters IS null)
 );
