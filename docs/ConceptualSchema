@@ -64,11 +64,7 @@ Some CUSOM OBJECTS have an EFFECT RANGE (eventually to be merged into PARAMETERS
 Some CUSTOM OBJECTS have PARAMETER NAMES
 Each PARAMETER NAME has a PARAMETER VALUE
 
-There are ELECTRONIC DEVICES
-Each ELECTRONIC DEVICE has a FINISHED WAFER used to create it
-Each FINISHED WAFER has a LAYER COUNT
-Each FINISHED WAFER has a certain CHIP COUNT
-Each FINISHED WAFER is created by a WAFER
+There are WAFERS
 Each WAFER has a LAYER
 Each WAFER has a LAYER NUMBER
 Each WAFER has an ELECTRONIC DEVICE is is used to create

@@ -98,6 +98,15 @@ CREATE TABLE polymer (
   DoubleSlabBlock text,
 );
 
+CREATE TABLE alloy (
+  Name text NOT NULL PRIMARY KEY,
+  Nugget text NOT NULL,
+  Ingot text NOT NULL,
+  Block text NOT NULL,
+  MaskDamage int,
+  MoldDamage int,
+);
+
 CREATE TABLE polymer_brick (
   TileEntity text NOT NULL,
   Source text NOT NULL,
@@ -136,4 +145,43 @@ CREATE TABLE custom_object (
   ParameterNames text,
   Parameters text,
   CHECK(ParameterNames IS null = Prameters IS null)
+);
+
+CREATE TABLE armor (
+  Material text NOT NULL PRIMARY KEY,
+  MaterialName text NOT NULL,
+  Durability int NOT NULL,
+  Enchantability int NOT NULL,
+  AquaAfinnity int NOT NULL,
+  Helm text,
+  HelmName text,
+  HelmReduction int,
+  Chest text,
+  ChestName text,
+  ChestReduction int,
+  Legging text,
+  LeggingName text,
+  LeggingReduction text,
+  Boot text,
+  BootName text,
+  BootReduction int
+);
+
+CREATE TABLE wafer (
+  Name text NOT NULL PRIMARY KEY,
+  Layer text NOT NULL,
+  LayerNumber int NOT NULL,
+  ElectronicDevice text,
+  Mask text,
+  Resist text,
+  CleanRoom int
+);
+
+CREATE TABLE gripped_tool (
+  Name text NOT NULL PRIMARY KEY,
+  BaseItem text NOT NULL,
+  Grip text NOT NULL,
+  DurabilityBuff number NOT NULL,
+  SpeedBuff number NOT NULL,
+  Level int
 );
