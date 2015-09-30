@@ -107,6 +107,17 @@ CREATE TABLE alloy (
   MoldDamage int,
 );
 
+CREATE TABLE native_ore (
+  Name text NOT NULL PRIMARY KEY,
+  Source text NOT NULL,
+  ExpMin int NOT NULL,
+  ExpMax int NOT NULL,
+  VeinPerChunk int NOT NULL,
+  BlockPerVein int NOT NULL,
+  DepthMin int NOT NULL,
+  DepthMax int NOT NULL
+);
+
 CREATE TABLE polymer_brick (
   TileEntity text NOT NULL,
   Source text NOT NULL,
@@ -117,6 +128,20 @@ CREATE TABLE polymer_brick (
   Mold text NOT NULL,
   Amount int NOT NULL,
   Duration int NOT NULL,
+);
+
+CREATE TABLE molded_item (
+  Mold text NOT NULL,
+  Variant text NOT NULL,
+  Name text NOT NULL,
+  Source text NOT NULL,
+  SourceAmt int NOT NULL, /* unit is small vessel */
+  CrafingTime int NOT NULL,
+  MaxStackSize int NOT NULL CHECK(MaxStackSize > 0 && MaxStackSize < 65),
+  Level int NOT NULL,
+  ParamterNames text,
+  ParameterValues text,
+  PRIMARY KEY(Mold, Variant)
 );
 
 CREATE TABLE tool (
@@ -134,6 +159,12 @@ CREATE TABLE tool (
   Sword text,
   Hoe text,
   PRIMARY KEY(Shaft, Head)
+);
+
+CREATE TABLE pogo_stick (
+  Name text NOT NULL PRIMARY KEY,
+  Material text NOT NULL,
+  MaxBounces int NOT NULL,
 );
 
 CREATE TABLE custom_object (
@@ -177,6 +208,13 @@ CREATE TABLE wafer (
   CleanRoom int
 );
 
+CREATE TABLE mask (
+  Name text NOT NULL PRIMARY KEY,
+  ID text NOT NULL,
+  Device text NOT NULL,
+  Layer number NOT NULL
+);
+
 CREATE TABLE gripped_tool (
   Name text NOT NULL PRIMARY KEY,
   BaseItem text NOT NULL,
@@ -185,3 +223,22 @@ CREATE TABLE gripped_tool (
   SpeedBuff number NOT NULL,
   Level int
 );
+
+CREATE TABLE inventory (
+  Name text NOT NULL PRIMARY KEY,
+  BlockID text NOT NULL,
+  TileEntityID text NOT NULL,
+  InterfaceID int NOT NULL,
+  RenderID int NOT NULL,
+  Render3dObject int NOT NULL CHECK(Render3dObject in (0, 1)),
+  Depth int NOT NULL,
+  Width int NOT NULL,
+  Height int NOT NULL,
+  FuelPort text, /* really a list of three ints, not sure how to express */
+  InputPort text,  /* See above */
+  OutputPort text, /* See above */
+  Icons text, /* Comma separated mapping of (Inventory, Down, Up, North, South, West, East, Default) to (top, side, front) */
+  ParamteterNames text,
+  ParameterValues text,
+);
+
