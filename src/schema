@@ -1,10 +1,8 @@
-CREATE DATABASE polycraft_config;
-
 /*
 Enumerations follow. These are hardcoded in this file because the tsv table containing them is not parseable by standard means.
 */
 CREATE TABLE vessels (
-  State text NOT NULL PRIMARY KEY CHECK(State in ('solid', 'liquid', 'gas')),
+  State text PRIMARY KEY CHECK(State in ('solid', 'liquid', 'gas')),
   Small text NOT NULL,
   Medium text NOT NULL,
   Large text NOT NULL
@@ -15,7 +13,7 @@ INSERT INTO vessels (State, Small, Medium, Large) VALUES ('gas', 'Flask', 'Cartr
 /*end enumerations*/
 
 CREATE TABLE minecraft_item (
-  ID text NOT NULL PRIMARY KEY,
+  ID text PRIMARY KEY,
   Name text NOT NULL,
   BurnIntensity int,
   BurnDuration int,
@@ -23,7 +21,7 @@ CREATE TABLE minecraft_item (
 );
 
 CREATE TABLE minecraft_block (
-  ID text NOT NULL PRIMARY KEY,
+  ID text PRIMARY KEY,
   Name text NOT NULL,
   BurnIntensity int,
   BurnDuration int,
@@ -31,7 +29,7 @@ CREATE TABLE minecraft_block (
 );
 
 CREATE TABLE element (
-  Name text NOT NULL PRIMARY KEY,
+  Name text PRIMARY KEY,
   Symbol text NOT NULL UNIQUE,
   State text NOT NULL CHECK(State IN ('solid', 'liquid', 'gas'),
   SmallVessel text,
@@ -58,7 +56,7 @@ CREATE TABLE element (
 );
 
 CREATE TABLE compound (
-  Name text NOT NULL PRIMARY KEY,
+  Name text PRIMARY KEY,
   Formula text,
   State text CHECK(State IN ('solid', 'liquid', 'gas')),
   SmallVessel text,
@@ -72,7 +70,7 @@ CREATE TABLE compound (
 );
 
 CREATE TABLE polymer (
-  Name text NOT NULL PRIMARY KEY,
+  Name text PRIMARY KEY,
   ShortName text,
   Thermoplastic number NOT NULL, /* SQLite has no boolean type */
   State text NOT NULL CHECK (State IN ('solid', 'liquid', 'gas')),
@@ -99,7 +97,7 @@ CREATE TABLE polymer (
 );
 
 CREATE TABLE alloy (
-  Name text NOT NULL PRIMARY KEY,
+  Name text PRIMARY KEY,
   Nugget text NOT NULL,
   Ingot text NOT NULL,
   Block text NOT NULL,
@@ -108,8 +106,20 @@ CREATE TABLE alloy (
 );
 
 CREATE TABLE native_ore (
-  Name text NOT NULL PRIMARY KEY,
+  Name text PRIMARY KEY,
   Source text NOT NULL,
+  ExpMin int NOT NULL,
+  ExpMax int NOT NULL,
+  VeinPerChunk int NOT NULL,
+  BlockPerVein int NOT NULL,
+  DepthMin int NOT NULL,
+  DepthMax int NOT NULL
+);
+
+CREATE TABLE mineral (
+  Name text PRIMARY KEY,
+  Hardness int NOT NULL,
+  Resistance int NOT NULL,
   ExpMin int NOT NULL,
   ExpMax int NOT NULL,
   VeinPerChunk int NOT NULL,
@@ -162,13 +172,13 @@ CREATE TABLE tool (
 );
 
 CREATE TABLE pogo_stick (
-  Name text NOT NULL PRIMARY KEY,
+  Name text PRIMARY KEY,
   Material text NOT NULL,
   MaxBounces int NOT NULL,
 );
 
 CREATE TABLE custom_object (
-  Name text NOT NULL PRIMARY KEY,
+  Name text PRIMARY KEY,
   ID text NOT NULL,
   Type text NOT NULL,
   Level int,
@@ -179,7 +189,7 @@ CREATE TABLE custom_object (
 );
 
 CREATE TABLE armor (
-  Material text NOT NULL PRIMARY KEY,
+  Material text PRIMARY KEY,
   MaterialName text NOT NULL,
   Durability int NOT NULL,
   Enchantability int NOT NULL,
@@ -199,7 +209,7 @@ CREATE TABLE armor (
 );
 
 CREATE TABLE wafer (
-  Name text NOT NULL PRIMARY KEY,
+  Name text PRIMARY KEY,
   Layer text NOT NULL,
   LayerNumber int NOT NULL,
   ElectronicDevice text,
@@ -209,14 +219,14 @@ CREATE TABLE wafer (
 );
 
 CREATE TABLE mask (
-  Name text NOT NULL PRIMARY KEY,
+  Name text PRIMARY KEY,
   ID text NOT NULL,
   Device text NOT NULL,
   Layer number NOT NULL
 );
 
 CREATE TABLE gripped_tool (
-  Name text NOT NULL PRIMARY KEY,
+  Name text PRIMARY KEY,
   BaseItem text NOT NULL,
   Grip text NOT NULL,
   DurabilityBuff number NOT NULL,
@@ -225,7 +235,7 @@ CREATE TABLE gripped_tool (
 );
 
 CREATE TABLE inventory (
-  Name text NOT NULL PRIMARY KEY,
+  Name text PRIMARY KEY,
   BlockID text NOT NULL,
   TileEntityID text NOT NULL,
   InterfaceID int NOT NULL,
@@ -241,4 +251,3 @@ CREATE TABLE inventory (
   ParamteterNames text,
   ParameterValues text,
 );
-
