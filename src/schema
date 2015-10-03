@@ -175,6 +175,10 @@ CREATE TABLE pogo_stick (
   Name text PRIMARY KEY,
   Material text NOT NULL,
   MaxBounces int NOT NULL,
+  BounceHeight int NOT NULL,
+  MovementBuff number NOT NULL,
+  GroundRestrit number NOT NULL,
+  Level int NOT NULL
 );
 
 CREATE TABLE custom_object (
