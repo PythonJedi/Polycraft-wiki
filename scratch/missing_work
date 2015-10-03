@@ -1,0 +1,10 @@
+I also solved my section issue. just use multiple smaller templates for each section/subsection and use underscores to mark the subsection relationship
+the template named "recipe_chemical processor" will produce a similarly named fragment file in the directory for each page, and the stitcher can tell to put its text
+under the section "recipe", subsection "chemical processor" in the page
+then I can just give the stitcher a callable that formats the section headers properly
+the stitcher can use nested dictionaries to represent sections and subsections, and most sane markups have numeric header formats ("<h#>", "="*#).
+It's all coming toether! (Unlike my rhet paper)
+LaTeX might not work because it's sections are encasulated...
+enapsulated*
+Barring syntax issues (I haven't actually run the code), the wiki builder is pretty much done.
+and it's only 4 source files. To be fair, most of the work in generating the wiki is writing the templates. github.com/PythonJedi/WikiMaker
