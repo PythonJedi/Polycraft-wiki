@@ -1,0 +1,8 @@
+The document build process begins with the YAML configuration of Polycraft.
+
+This is parsed by an application specific python script that produces
+generalized documents in the ydtar format.
+
+These documents are then run through any desired ydtar target to produce a
+collection of documents that can be Wikicode, markdown, HTML, Plaintext, even
+LaTeX that can be compiled to PDF.
