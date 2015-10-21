@@ -5,6 +5,7 @@ Let C be the set of all conceptual entities in polycraft. For any c that is a me
 specified subset of the Strings to a union of I, B, the Strings, and the Reals. Each conceptual entity may have one
 or more items or blocks that represent the concept. In the case of chemicals, there are three different items that
 represent different amounts of the chemical. In the case of pogo sticks, there are gripped and ungripped versions.
+The strings related to other strings or to the reals provide configuration information to the members of I and B.
 
 Let G be the set of all ordered relations from B union I to the integers. Then R is the set of all recipes, and is a 
 binary relation from G to G, where the resultant objects are mapped to the types and quantities of component items.
