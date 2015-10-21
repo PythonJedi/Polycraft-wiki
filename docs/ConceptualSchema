@@ -19,7 +19,7 @@ Each ARMOR SET has a CRAFTING ITEM
 Each ARMOR SET has a unique MATERIAL NAME
 Each ARMOR SET has a DURABILITY
 Each ARMOR SET has an ENCHANTABILITY
-Each ARMOR SET has an AQUA AFINNITY LEVEL (a property that makes working in water easier)
+Some ARMOR SETS have ENCHANTMENT LEVELS (mapping of enchantment names to integers)
 Each ARMOR SET has a PART NAME for each ARMOR PIECE
 Each ARMOR PIECE has a REDUCTION (how much protection the piece provides)
 Each ARMOR PIECE has an ID
@@ -57,10 +57,12 @@ Most ELEMENTS have a known ELECTRONEGATIVITY
 Each ELEMENT has a NATRUAL ABUNDANCE (man-made elements are 0)
 
 There are CUSTOM OBJECTS
+Each CUSTOM OBJECT has a NAME
+Each CUSTOM OBJECT has an ID
 Each CUSTOM OBJECT has a TYPE
 Some CUSTOM OBJECTS have a LEVEL requirement
 Each CUSTOM OBJECT has a MAX STACK SIZE
-Some CUSOM OBJECTS have an EFFECT RANGE (eventually to be merged into PARAMETERS
+Some CUSOM OBJECTS have an EFFECT RANGE
 Some CUSTOM OBJECTS have PARAMETER NAMES
 Each PARAMETER NAME has a PARAMETER VALUE
 
