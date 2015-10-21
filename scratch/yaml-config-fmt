@@ -1,0 +1,6 @@
+Idea for polycraft configuration in YAML.
+
+Use nested mappings to categorize items and their configuration. While this is not as space efficient as a table since
+common tags are repeated quite often, it is much more flexible and future-proof.
+
+https://medium.com/@MrJamesFisher/configuration-files-suck-6daa9812f601
