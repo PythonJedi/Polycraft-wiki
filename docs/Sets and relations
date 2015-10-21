@@ -1,0 +1,19 @@
+Let I be the set of all items in polycraft
+Let B be the set of all blocks in polycraft
+
+Let C be the set of all conceptual entities in polycraft. For any c that is a member of A, a is a relation from a 
+specified subset of the Strings to a union of I, B, the Strings, and the Reals. Each conceptual entity may have one
+or more items or blocks that represent the concept. In the case of chemicals, there are three different items that
+represent different amounts of the chemical. In the case of pogo sticks, there are gripped and ungripped versions.
+
+Let G be the set of all ordered relations from B union I to the integers. Then R is the set of all recipes, and is a 
+binary relation from G to G, where the resultant objects are mapped to the types and quantities of component items.
+
+Let P be the set of all patterns in polycraft. This is a relation from the binary matricies to I.
+
+Let M be the set of all machines in polycraft. Any member of B that implements a member of P or R. The relations from
+M to P and M to R partition M, and fully encompass P and R respectively. 
+
+An ideal wiki would have a page for each conceptual entity, where a page is a rather long string that includes
+formatting directives to produce an organized and effective means of communicating the information about a concept 
+to a player.
