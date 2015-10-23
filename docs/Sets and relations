@@ -1,7 +1,7 @@
 Let I be the set of all items in polycraft
 Let B be the set of all blocks in polycraft
 
-Let C be the set of all conceptual entities in polycraft. For any c that is a member of A, a is a relation from a 
+Let C be the set of all conceptual entities in polycraft. For any c that is a member of C, c is a relation from a 
 specified subset of the Strings to a union of I, B, the Strings, and the Reals. Each conceptual entity may have one
 or more items or blocks that represent the concept. In the case of chemicals, there are three different items that
 represent different amounts of the chemical. In the case of pogo sticks, there are gripped and ungripped versions.
