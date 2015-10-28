@@ -6,4 +6,19 @@ armor:
   stats: 
     "Durability" : "{durability}"
     "Enchantability" : "{enchantability}"
-    "Base enchantments" : "
+    "Base enchantments" : "{enchantments}" # Note that the enchantments dict __str__ method is modified
+    "Reduction" :
+      "{head[name]}" : "{head[reduction]}"
+      "{chest[name]}" : "{chest[reduction]}"
+      "{leg[name]}" : "{leg[reduction]}"
+      "{foot[name]}" : "{foot[reduction]}"
+  categories:
+    - Craftable
+    - Armor
+
+compound:
+  title: "{name}"
+  desc: "{name} (may also be known as: {nicknames}) is a compound available to be created in polycraft."
+  stats:
+    "Formula" : "{formula}"
+    "State" : "{state}"
