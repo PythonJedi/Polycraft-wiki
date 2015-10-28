@@ -1,0 +1,82 @@
+#! /usr/bin/python2
+"""Application specific file format conversion for polycraft's configuration
+from the existing .tsv files to an internal organized structure of dictionaries
+to a series of generalized documents suitable for running through ydtar.
+
+Author: Timothy Hewitt (PythonJedi)
+Date: 10/26/2015"""
+
+import os.path
+
+def debug_factory(level):
+  if level > 10:
+    print "Debug level > 10, setting to 10"
+  return [lambda x: print(x) for i in range(level)].extend([lambda x: pass for i in range(10-level)]
+
+def build_compound(row):
+  pass
+def build_element(row):
+  pass
+def build_armor(row):
+  pass
+def build_minecraft_item(row):
+  pass
+def build_minecraft_block(row):
+  pass
+def build_custom_object(row):
+  pass
+def build_wafer(row):
+  pass
+def build_gripped_tool(row):
+  pass
+def build_alloy(row):
+  pass
+def build_inventory(row):
+  pass
+def build_mask(row):
+  pass
+def build_molded_item(row):
+  pass
+def build_native_ore(row):
+  pass
+def build_mineral(row):
+  pass
+def build_pogo_stick(row):
+  pass
+def build_polymer(row):
+  pass
+def build_polymer_brick(row):
+  pass
+def build_tool(row):
+  pass
+
+def build_config(tsv, DEBUG=None):
+  for row in tsv:
+    yield Concept(row)
+
+def main(input, DEBUG=None):
+  input = os.path.normcase(input)
+  if not os.path.exists(input):
+    raise SystemExit("Input file"+input+" not found!)
+
+  DEBUG[1]("Loading tsv "+input)
+  tsv = load_tsv(input, DEBUG)
+
+  DEBUG[1]("Building configuration")
+  config = build_config(tsv, DEBUG)
+
+  for concept in config:
+    DEBUG[1]("Outputting "+str(concept))
+    output(concept)
+
+if __name__ == "__main__":
+  import sys
+  if len(sys.argv) > 1:
+    input = sys.argv[1]
+  else:
+    print "Usage: $ tsv2yaml <input> [debug_level]
+  if len(sys.argv) > 2 and sys.argv[2].isdigit():
+    DEBUG = debug_factory(int(sys.argv[2]))
+  else:
+    DEBUG = None
+  main(input, DEBUG)

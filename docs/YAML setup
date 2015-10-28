@@ -1,7 +1,7 @@
 This is a specification for representing the entire configuration of Polycraft in a YAML format.
 
-The entire configuration for the mod is stored in one yaml document. The top level node is a mapping cotaining 
-three keys: 'config', 'recipes', and 'pattersn'
+The entire configuration for the mod is stored in one yaml document. The top level node is a mapping cotaining
+three keys: 'config', 'recipes', and 'patterns'
 
 config section
 The config node contains a mapping of catefgories of static items in the mod. The objects in these categories
@@ -10,26 +10,25 @@ Because the objects in a certain category have common attributes, the category r
 sequence of strings denoting the key of the datum in an element of the data sequence. This sequence is where the
 configuration is actually stored. A key should only be in the heading if it makes sense for all the objects in the
 category to have a value for that key. If it doesn't make sense for some objects to have a value, the category
-membership may need to be reconsidered, or the key can be placed in a mapping at the end of the entry in the 
+membership may need to be reconsidered, or the key can be placed in a mapping at the end of the entry in the
 data sequence. Such a composition requires some extra code for arbitrary lookups, but compromises ease of
-lookup with verbosity of representation. The other options we have are complete mappings, which require repetition 
+lookup with verbosity of representation. The other options we have are complete mappings, which require repetition
 of
 common keys, or completely tabular, which creates issues with occasional extra configuration and mostly empty
 collumns.
 
 recipe section
-The recipe section is a listing of all the recipes that produce a set of certain numbers of items from a specific 
-input. patterns like molds and masks go in the pattern section of the config. The recipes are first categorized by 
-a mapping of outputs and amounts, then by machine. each entry of a machine for an output has a list of recipes. 
-this would be a set, but each recipe is a compound key, and most systems don't like compound keys. This makes the 
-lookup of "how can X be made" somewhat simple, and the output is even organized by machine. However, finding what 
+The recipe section is a listing of all the recipes that produce a set of certain numbers of items from a specific
+input. patterns like molds and masks go in the pattern section of the config. The recipes are first categorized by
+a mapping of outputs and amounts, then by machine. each entry of a machine for an output has a list of recipes.
+this would be a set, but each recipe is a compound key, and most systems don't like compound keys. This makes the
+lookup of "how can X be made" somewhat simple, and the output is even organized by machine. However, finding what
 recipes use an object is much more difficult.
 
 pattern section
-Patterns are a feature of polycraft that allow the same item to be made with many different types of the same 
-component object, keeping the number of objects much smaller. The current use cases are masks, molds, and dies, 
+Patterns are a feature of polycraft that allow the same item to be made with many different types of the same
+component object, keeping the number of objects much smaller. The current use cases are masks, molds, and dies,
 with more potential examples coming. Contrasted with the recipes, each object can only be made in one machine, and
 each machine makes many objects with a one to one relation between objects and patterns they're made with.
-each machine name maps to a mapping of output names to input patterns represented as a nested list of boolean 
+each machine name maps to a mapping of output names to input patterns represented as a nested list of boolean
 values.
-
