@@ -7,6 +7,11 @@ Author: Timothy Hewitt (PythonJedi)
 Date: 10/26/2015"""
 
 import os.path
+import yaml
+
+# load document generics
+with frag_f as open("res/fragments.yaml", "r")
+  fragments = yaml.load("".join(frag_f.readlines()))
 
 def debug_factory(level):
   if level > 10:
