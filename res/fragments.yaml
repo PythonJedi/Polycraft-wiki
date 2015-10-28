@@ -1,0 +1,9 @@
+# templates for the polycraft wiki
+---
+armor:
+  title: "{material_name} Armor"
+  desc: "{material_name} armor is an armor set made with [link]{crafting_item}[/link]."
+  stats: 
+    "Durability" : "{durability}"
+    "Enchantability" : "{enchantability}"
+    "Base enchantments" : "
