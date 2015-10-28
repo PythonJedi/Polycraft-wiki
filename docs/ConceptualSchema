@@ -25,7 +25,8 @@ Each ARMOR PIECE has a REDUCTION (how much protection the piece provides)
 Each ARMOR PIECE has an ID
 
 There are COMPOUNDS
-Each COMPOUND has a certain STATE
+Each COMPOUND has a NAME
+Each COMPOUND has a STATE
 Each COMPOUND has an ID for each VESSEL scale
 Most COMPOUNDS have a FORMULA
 Some COMPOUNDS have NICKNAMES
@@ -34,6 +35,7 @@ Some COMPOUNDS have a FUEL INTENSITY
 Some COMPOUNDS have a FUEL DURATION
 
 There are ELEMENTS
+Each ELEMENT has a NAME
 Each ELEMENT has a certain STATE
 Each ELEMENT has an ID for each VESSEL scale
 Some ELEMENTS are CATALYSTS
@@ -57,6 +59,7 @@ Most ELEMENTS have a known ELECTRONEGATIVITY
 Each ELEMENT has a NATRUAL ABUNDANCE (man-made elements are 0)
 
 There are CUSTOM OBJECTS
+Each CUSTOM OBJECT has a NAME
 Each CUSTOM OBJECT has a TYPE
 Some CUSTOM OBJECTS have a LEVEL requirement
 Each CUSTOM OBJECT has a MAX STACK SIZE
