@@ -1,0 +1,9 @@
+Overal process description for migrating and maintaining the polycraft wiki.
+
+See 'docs/Sets and Relations' for a description of organizing polycraft itself.
+
+The following are the considerations for updating the wiki from a documentation 
+generator.
+    - User added data must not be removed.
+        - Determining what was added by users and what was not may be difficult.
+          One approach may be to 
