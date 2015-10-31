@@ -2,8 +2,27 @@ Overal process description for migrating and maintaining the polycraft wiki.
 
 See 'docs/Sets and Relations' for a description of organizing polycraft itself.
 
-The following are the considerations for updating the wiki from a documentation 
-generator.
-    - User added data must not be removed.
-        - Determining what was added by users and what was not may be difficult.
-          One approach may be to 
+To make the project sustainable and reliable, approaching the documentation in
+a different manner is required.
+
+Currently, the mediawiki implementation used is
+old and not entirely secure, requiring extra work from the university to
+maintain the integrity of the campus network. Transferring to another wiki
+format could be accomplished, but this still leaves the issues of limited
+updating and only students/staff/faculty being able to edit the wiki. If
+polycraft is to be embraced by the minecraft modding community at large, which
+is necessary for continued success, we must have a standardized method of
+allowing the polycraft community to participate in bettering the documentation.
+
+Using a static html website that is automatically generated and built allows
+the university network operators to do whatever they want in terms of security
+as long as they can serve up html pages (which is the very basis of the web
+server's purpose). when this static website is built from  information stored in
+a github repository, anyone can help assist with keeping
+the documentation clean and usable. However, no one can modify the official
+repository without having their submission reviewed first. This add another
+layer of safety in terms of the university's public image. Finally, the entire
+site is built with an automated system that integrates the mod's configuration
+data into the page and provides a solid templating suite. It also gives us
+complete control of the look and feel of the site, insted of forcing us to work
+with only so many themes.
